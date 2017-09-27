@@ -12,6 +12,9 @@ public final class Constantes {
     public static final String SPRING_PROFILE_TEST = "test";
     public static final String SPRING_PROFILE_PROD = "prod";
 
+    // Profile para desabilitar a execução do Liquibase
+    public static final String SPRING_PROFILE_NO_LIQUIBASE = "no-liquibase";
+
     private Constantes() { }
 
 }

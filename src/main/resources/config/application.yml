@@ -55,7 +55,7 @@ info:
 # ===================================================================
 # Propriedades especificas da aplicacao
 # ===================================================================
-app:
+application:
     mail:
         from: cadastroapi@localhost
     swagger:
