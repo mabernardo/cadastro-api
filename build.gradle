@@ -1,14 +1,12 @@
 buildscript {
-	ext {
-		springBootVersion = '1.5.7.RELEASE'
-	}
 	repositories {
 		mavenCentral()
 	}
 	dependencies {
-		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
+		classpath("org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}")
 	}
 }
+defaultTasks 'bootRun'
 
 apply plugin: 'java'
 apply plugin: 'idea'
@@ -35,6 +33,7 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	runtime('com.h2database:h2')
 	runtime('mysql:mysql-connector-java')
+    compile ("com.zaxxer:HikariCP:${hikaricp_version}")
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }
