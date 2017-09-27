@@ -1,7 +1,5 @@
 package mabernardo.cadastroapi.config;
 
-import org.apache.tomcat.util.bcel.Const;
-
 /**
  * Constantes da aplica&ccedil;&atilde;o.
  *
