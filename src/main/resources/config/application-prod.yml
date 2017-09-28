@@ -49,39 +49,9 @@ server:
 # Propriedades especificas da aplicacao
 # ===================================================================
 application:
-    http:
-        version: V_1_1
-        cache:
-            timeToLiveInDays: 1461
-    cache:
-        ehcache:
-            time-to-live-seconds: 3600
-            max-entries: 1000
-    security:
+     security:
         authentication:
             jwt:
                 secret: afb82cc599b297b8b337f9456eeac7b6d68a03e6
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
-    mail:
-        from: cadastroapi@localhost
-        base-url: http://my-server-url-to-change
-    metrics:
-        jmx.enabled: true
-        graphite:
-            enabled: false
-            host: localhost
-            port: 2003
-            prefix: cadastroapi
-        prometheus:
-            enabled: false
-            endpoint: /prometheusMetrics
-        logs:
-            enabled: false
-            report-frequency: 60
-    logging:
-        logstash:
-            enabled: false
-            host: localhost
-            port: 5000
-            queue-size: 512

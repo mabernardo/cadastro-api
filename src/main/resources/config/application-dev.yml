@@ -10,7 +10,7 @@
 spring:
     profiles:
         active: dev
-        include: swagger
+        include: swagger security-off
     jackson:
         serialization.indent_output: true
     datasource:
@@ -48,46 +48,10 @@ server:
 # ===================================================================
 # Propriedades especificas da aplicacao
 # ===================================================================
-
 application:
-    http:
-        version: V_1_1
-    cache:
-        ehcache:
-            time-to-live-seconds: 3600
-            max-entries: 100
-    cors:
-        allowed-origins: "*"
-        allowed-methods: "*"
-        allowed-headers: "*"
-        exposed-headers: "Authorization"
-        allow-credentials: true
-        max-age: 1800
     security:
         authentication:
             jwt:
                 secret: meu-super-secreto-token
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
-    mail:
-        from: cadastroapi@localhost
-        base-url: http://127.0.0.1:8080
-    metrics:
-        jmx.enabled: true
-        graphite:
-            enabled: false
-            host: localhost
-            port: 2003
-            prefix: cadastroapi
-        prometheus:
-            enabled: false
-            endpoint: /prometheusMetrics
-        logs:
-            enabled: false
-            report-frequency: 60
-    logging:
-        logstash:
-            enabled: false
-            host: localhost
-            port: 5000
-            queue-size: 512
