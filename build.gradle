@@ -35,6 +35,7 @@ dependencies {
     }
     compile "org.springframework.boot:spring-boot-starter-undertow"
     compile "org.springframework.boot:spring-boot-starter-security"
+    compile "org.springframework.boot:spring-boot-actuator"
     compile "org.hibernate:hibernate-core:${hibernate_version}"
     compile "org.hibernate:hibernate-envers:${hibernate_version}"
     compile "org.hibernate:hibernate-validator"
@@ -46,6 +47,7 @@ dependencies {
     compile "com.fasterxml.jackson.datatype:jackson-datatype-hibernate5"
     compile "com.fasterxml.jackson.module:jackson-module-afterburner"
     compile "org.zalando:problem-spring-web:${problem_spring_web_version}"
+    compile "org.apache.commons:commons-lang3:${commons_lang_version}"
     runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')

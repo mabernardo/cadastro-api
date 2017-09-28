@@ -17,6 +17,9 @@ public final class Constantes {
 
     // Spring Security
     public static final String SYSTEM_ACCOUNT = "system";
+    public static final String ANONYMOUS_USER = "anonymoususer";
+    //Regex para logins válidos
+    public static final String LOGIN_REGEX = "^[_'.@A-Za-z0-9-]*$";
 
     private Constantes() { }
 
