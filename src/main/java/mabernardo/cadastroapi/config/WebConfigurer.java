@@ -19,7 +19,7 @@ import javax.servlet.ServletException;
 import javax.servlet.ServletRegistration;
 
 /**
- * Configuração para a aplicação web com API Servlet 3.0.
+ * Configura&ccedil;&atilde;o para a aplica&ccedil;&atilde;o web com API Servlet 3.0.
  */
 @Configuration
 public class WebConfigurer implements ServletContextInitializer, EmbeddedServletContainerCustomizer {
@@ -70,7 +70,7 @@ public class WebConfigurer implements ServletContextInitializer, EmbeddedServlet
     }
 
     /**
-     * Resolve o prefixo do caminho para recursos estáticos.
+     * Resolve o prefixo do caminho para recursos est&aacute;ticos.
      */
     private String resolvePathPrefix() {
         String fullExecutablePath = this.getClass().getResource("").getPath();
