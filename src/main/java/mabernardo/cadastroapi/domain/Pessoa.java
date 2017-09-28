@@ -40,6 +40,12 @@ public class Pessoa implements Serializable {
     @Column(name = "sobrenome", length = 60, nullable = false)
     private String sobrenome;
 
+    @NotNull
+    @Size(min = 3, max = 11)
+    @Pattern(regexp = "^[0-9]*$")
+    @Column(name = "cpf", length = 11, nullable = false, unique = true)
+    private String cpf;
+
     @Column(name = "nascimento")
     private LocalDate nascimento;
 
@@ -88,6 +94,19 @@ public class Pessoa implements Serializable {
 
     public void setSobrenome(String sobrenome) {
         this.sobrenome = sobrenome;
+    }
+
+    public void setCpf(String cpf) {
+        this.cpf = cpf;
+    }
+
+    public String getCpf() {
+        return cpf;
+    }
+
+    public Pessoa cpf(String cpf) {
+        this.cpf = cpf;
+        return this;
     }
 
     public LocalDate getNascimento() {
