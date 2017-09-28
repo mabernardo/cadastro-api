@@ -1,4 +1,4 @@
-package mabernardo.cadastroapi.domain;
+package mabernardo.cadastroapi.domain.security;
 
 import java.io.Serializable;
 

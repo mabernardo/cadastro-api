@@ -19,7 +19,6 @@ import java.util.Objects;
 import java.util.Set;
 import java.time.Instant;
 
-import mabernardo.cadastroapi.domain.AbstractAuditingEntity;
 /**
  * Um usu&aacute;rio da aplica&ccedil;&atilde;o.
  */
