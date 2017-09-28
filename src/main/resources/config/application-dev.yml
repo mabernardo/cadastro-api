@@ -10,7 +10,7 @@
 spring:
     profiles:
         active: dev
-        include: swagger security-off
+        include: swagger, security-off
     jackson:
         serialization.indent_output: true
     datasource:
@@ -55,3 +55,10 @@ application:
                 secret: meu-super-secreto-token
                 token-validity-in-seconds: 86400
                 token-validity-in-seconds-for-remember-me: 2592000
+    cors:
+        allowed-origins: "*"
+        allowed-methods: "*"
+        allowed-headers: "*"
+        exposed-headers: "Authorization"
+        allow-credentials: true
+        max-age: 1800
