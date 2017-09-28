@@ -31,9 +31,11 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	compile('org.springframework.boot:spring-boot-starter-jooq')
 	compile('org.springframework.boot:spring-boot-starter-web')
+    compile "org.springframework.boot:spring-boot-starter-security"
     compile('com.h2database:h2')
     compile('org.liquibase:liquibase-core')
     compile("com.zaxxer:HikariCP:${hikaricp_version}")
+    compile "io.jsonwebtoken:jjwt:${jjwt_version}"
     runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
