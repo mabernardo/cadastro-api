@@ -4,13 +4,11 @@ import liquibase.integration.spring.SpringLiquibase;
 import org.h2.tools.Server;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.autoconfigure.liquibase.LiquibaseProperties;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
-import org.springframework.core.task.TaskExecutor;
 import org.springframework.data.jpa.repository.config.EnableJpaAuditing;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 import org.springframework.transaction.annotation.EnableTransactionManagement;
@@ -33,10 +31,10 @@ public class DatabaseConfiguration {
     }
 
     /**
-     * Open the TCP port for the H2 database, so it is available remotely.
+     * Abre a porta TCP para o H2 para que fique dispon&iacute;vel remotamente.
      *
-     * @return the H2 database TCP server
-     * @throws SQLException if the server failed to start
+     * @return o servidor TCP do H2
+     * @throws SQLException se o servidor n&atilde;o iniciar
      */
     @Bean(initMethod = "start", destroyMethod = "stop")
     @Profile(Constantes.SPRING_PROFILE_DEV)

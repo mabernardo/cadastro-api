@@ -6,11 +6,11 @@ buildscript {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${spring_boot_version}")
 	}
 }
-defaultTasks 'bootRun'
 
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+defaultTasks 'bootRun'
 
 group = 'mabernardo'
 version = '0.0.1-SNAPSHOT'
@@ -33,13 +33,20 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
     compile('com.h2database:h2')
     compile('org.liquibase:liquibase-core')
-    compile('com.zaxxer:HikariCP:${hikaricp_version}')
+    compile("com.zaxxer:HikariCP:${hikaricp_version}")
     runtime('mysql:mysql-connector-java')
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 	testCompile('org.springframework.restdocs:spring-restdocs-mockmvc')
 }
 
+clean {
+	delete "target"
+}
+
+task cleanResources(type: Delete) {
+	delete 'build/resources'
+}
 
 compileJava.dependsOn processResources
-processResources.dependsOn cleanResources,bootBuildInfo
-bootBuildInfo.mustRunAfter cleanResources
+//processResources.dependsOn cleanResources,bootBuildInfo
+//#bootBuildInfo.mustRunAfter cleanResources
