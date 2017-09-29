@@ -1,5 +1,4 @@
 apply plugin: 'org.springframework.boot'
-apply plugin: 'com.moowork.node'
 
 ext {
     logbackLoglevel = "INFO"
@@ -19,17 +18,9 @@ if (project.hasProperty('swagger')) {
 }
 
 bootRun {
-    args = []
+    args = ["--spring.profiles.active=" + profiles]
 }
 
-
-task webpack_test(type: YarnTask, dependsOn: 'yarn_install') {
-    args = ["run", "webpack:test"]
-}
-
-task webpack(type: YarnTask, dependsOn: 'yarn_install') {
-    args = ["run", "webpack:prod"]
-}
 
 war {
     webAppDirName = 'build/www/'
@@ -50,6 +41,3 @@ processResources {
         }
     }
 }
-
-test.dependsOn webpack_test
-processResources.dependsOn webpack

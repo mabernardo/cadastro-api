@@ -14,6 +14,7 @@ buildscript {
 apply plugin: 'java'
 apply plugin: 'idea'
 apply plugin: 'org.springframework.boot'
+apply plugin: 'war'
 defaultTasks 'bootRun'
 
 group = 'mabernardo'
@@ -29,6 +30,7 @@ if (project.hasProperty('prod')) {
 } else {
 	apply from: 'gradle/profile_dev.gradle'
 }
+apply from: 'gradle/docker.gradle'
 apply from: 'gradle/liquibase.gradle'
 apply from: 'gradle/swagger.gradle'
 
@@ -42,6 +44,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-security"
     compile "org.springframework.boot:spring-boot-actuator"
     compile "org.springframework.boot:spring-boot-autoconfigure"
+    compile "org.springframework.security:spring-security-data"
     compile "org.hibernate:hibernate-core:${hibernate_version}"
     compile "org.hibernate:hibernate-envers:${hibernate_version}"
     compile "org.hibernate:hibernate-validator"
