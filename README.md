@@ -107,12 +107,15 @@ Note que a aplicação está configurada para utilizar um banco de dados MySQL e
 esteja rodando antes de iniciar a aplicação.
 
 Para iniciar o MySql em um container docker, execute:
+
     [sudo] docker-compose -f src/main/docker/mysql.yml up -d
 
 Para parar e remover o container, execute:
+
     [sudo] docker-compose -f src/main/docker/mysql.yml down
 
 É possível empacotar a aplicação em um arquivo WAR para deploy em algum container da seguinte forma:
+
     ./gradlew -Pprod bootRepackage
 
 É possível ainda "dockerizar" completamente a aplicação com todos os serviços que ela depende.
@@ -124,6 +127,7 @@ E então rode-a:
 
     [sudo] docker-compose -f src/main/docker/app.yml up -d
 
-## Dependencies
+## Dependências
 JRE 1.8+
+
 Docker & Docker Compose (para iniciar MySql em container ou rodar a aplicação como imagem docker)
