@@ -1,5 +1,3 @@
-# users-api
-
 [![Build Status](https://travis-ci.org/mabernardo/cadastro-api.svg?branch=master)](https://travis-ci.org/mabernardo/cadastro-api)
 
 # cadastro-api
