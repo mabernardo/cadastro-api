@@ -1,5 +1,6 @@
 package mabernardo.cadastroapi.domain;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import io.swagger.annotations.ApiModel;
 import org.hibernate.annotations.Cache;
 import org.hibernate.annotations.CacheConcurrencyStrategy;
@@ -40,11 +41,12 @@ public class Telefone implements Serializable {
     @Enumerated(EnumType.STRING)
     @Column(name = "tipo")
     private TipoTelefone tipo;
-
+/*
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "pessoa_id")
+    @JsonIgnore
     private Pessoa pessoa;
-
+*/
     public Long getId() {
         return id;
     }
@@ -91,7 +93,7 @@ public class Telefone implements Serializable {
     public void setTipo(TipoTelefone tipo) {
         this.tipo = tipo;
     }
-
+/*
     public Pessoa getPessoa() {
         return pessoa;
     }
@@ -104,7 +106,7 @@ public class Telefone implements Serializable {
     public void setPessoa(Pessoa pessoa) {
         this.pessoa = pessoa;
     }
-
+*/
     @Override
     public boolean equals(Object o) {
         if (this == o) {

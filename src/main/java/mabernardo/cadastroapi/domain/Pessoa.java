@@ -53,12 +53,12 @@ public class Pessoa implements Serializable {
     @Column(name = "status")
     private StatusCadastro status;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(unique = true)
     private Endereco endereco;
 
-    @OneToMany(mappedBy = "pessoa", orphanRemoval = true, cascade = CascadeType.ALL)
-    @JsonIgnore
+    @OneToMany(orphanRemoval = true, cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @JoinColumn(name="pessoa_id", nullable = false)
     @Cache(usage = CacheConcurrencyStrategy.NONSTRICT_READ_WRITE)
     private Set<Telefone> telefones = new HashSet<>();
 
@@ -159,13 +159,13 @@ public class Pessoa implements Serializable {
 
     public Pessoa addTelefones(Telefone telefone) {
         this.telefones.add(telefone);
-        telefone.setPessoa(this);
+        //telefone.setPessoa(this);
         return this;
     }
 
     public Pessoa removeTelefones(Telefone telefone) {
         this.telefones.remove(telefone);
-        telefone.setPessoa(null);
+        //telefone.setPessoa(null);
         return this;
     }
 
