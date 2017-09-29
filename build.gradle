@@ -36,6 +36,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-undertow"
     compile "org.springframework.boot:spring-boot-starter-security"
     compile "org.springframework.boot:spring-boot-actuator"
+    compile "org.springframework.boot:spring-boot-autoconfigure"
     compile "org.hibernate:hibernate-core:${hibernate_version}"
     compile "org.hibernate:hibernate-envers:${hibernate_version}"
     compile "org.hibernate:hibernate-validator"
@@ -65,5 +66,3 @@ task cleanResources(type: Delete) {
 }
 
 compileJava.dependsOn processResources
-//processResources.dependsOn cleanResources,bootBuildInfo
-//#bootBuildInfo.mustRunAfter cleanResources
